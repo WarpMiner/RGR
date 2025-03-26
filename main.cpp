@@ -92,7 +92,7 @@ void Crypt(string choice_shifr, int key) {
     message = FileInput(filename);
     string Encrypted, Descrypted;
     if (choice_shifr == "Caesar") {
-        Encrypted = CaesarEncryption(message, 17, key);
+        Encrypted = CaesarEncryption(message, shift, key);
     } else if (choice_shifr == "A1Z26") {
         Encrypted = A1Z26Encryption(message, key);
     }
@@ -118,7 +118,7 @@ void Crypt(string choice_shifr, int key) {
             Encrypted = FileInput(filename);
             if (Encrypted != "Error: Unable to open the file") {
                 if (choice_shifr == "Caesar") {
-                    Descrypted = CaesarDescryption(Encrypted, -17, key);
+                    Descrypted = CaesarDescryption(Encrypted, shift, key);
                 } else if (choice_shifr == "A1Z26") {
                     Descrypted = A1Z26Descryption(Encrypted, key);
                 } else if (choice_shifr == "DiffieHellman") {
